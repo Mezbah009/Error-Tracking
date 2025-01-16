@@ -96,14 +96,14 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 
-// Route::group(['prefix' => 'developer'], function () {
+// Route::group(['prefix' => 'member'], function () {
 //     // Routes for members
-//     Route::group(['middleware' => 'developer.guest'], function () {
+//     Route::group(['middleware' => 'member.guest'], function () {
 //         Route::get('/login', [LoginController::class, 'index'])->name('admin.login');
-//         Route::post('/developer/authenticate', [LoginController::class, 'authenticate'])->name('member.authenticate');
+//         Route::post('/member/authenticate', [LoginController::class, 'authenticate'])->name('member.authenticate');
 //     });
 
-//     Route::group(['middleware' => 'developer.auth'], function () {
+//     Route::group(['middleware' => 'member.auth'], function () {
 
 //         Route::get('/developer/dashboard', [DeveloperHomeController::class, 'index'])->name('member.dashboard');
 //         Route::get('/manager-masterdata', [DeveloperHomeController::class, 'masterdata_index'])->name('member.masterdata');
@@ -119,6 +119,8 @@ Route::group(['prefix' => 'admin'], function () {
 //         //member
 //         Route::get('/manager-profile-edit', [LoginController::class, 'manager_edit'])->name('member.profile.edit');
 //         Route::put('/manager-profie-update/{id}', [LoginController::class, 'manager_update'])->name('member.profile.update');
+
+//         Route::get('/logout', [LoginController::class, 'logout'])->name('member.logout');
 
 //     });
 // });

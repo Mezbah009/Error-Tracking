@@ -9,6 +9,6 @@ class DeveloperHomeController extends Controller
 {
     public function index()
 {
-    return view('developer.dasboard');
+    return view('member.dasboard');
 }
 }
