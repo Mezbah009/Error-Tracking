@@ -1,0 +1,137 @@
+.w-4 {
+  width: 1rem;
+}
+.h-4 {
+  height: 1rem;
+}
+
+.w-6 {
+  width: 1.5rem;
+}
+.h-6 {
+  height: 1.5rem;
+}
+
+.dropzone {
+  background: white;
+  border-radius: 5px;
+  border: 2px dashed rgb(0, 135, 247);
+  border-image: none;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.small-box:hover {
+  box-shadow: 0 0 30px #fff, 0 0 10px #99d6ff, 0 0 15px #99d6ff, 0 0 20px #99d6ff;
+  animation: neonGlow 1.5s infinite alternate;
+}
+
+@keyframes neonGlow {
+  to {
+      box-shadow: 0 0 30px #fff, 0 0 10px #99d6ff, 0 0 15px #99d6ff, 0 0 20px #99d6ff;
+  }
+}
+
+.card-link {
+  color: black;
+}
+.card-link:hover {
+  color: rgb(53, 53, 53);
+}
+
+
+/* public/css/styles.css */
+
+.under-construction-container {
+  text-align: center;
+  position: absolute;
+  top: 45%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+}
+
+.under-construction-container img {
+  width: 200px; /* Adjust the image size as needed */
+}
+
+.under-construction-container h2 {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.under-construction-container p {
+  font-size: 16px;
+  color: #777;
+  margin-top: 10px;
+}
+
+/* purchase  */
+
+.content-headers {
+  padding: 8px 0.5rem;
+}
+
+.card-head {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 0.2rem;
+  padding-top: 0.5rem;
+  padding-left: 1.3rem;
+
+}
+
+[class*="sidebar-dark-"] {
+  /* New background color for the sidebar */
+  background-color: #000000; /* Replace with your desired color code */
+}
+[class*=sidebar-dark-] .sidebar a {
+  color: #f0f0f0;
+}
+.font-weight-light {
+  font-weight: 500!important;
+}
+.dropdown-menu li a:hover {
+  background-color: #0b60b0c1;
+}
+
+.dropdown-menu li a:hover i {
+  color: #FFFFFF !important;
+}
+
+.dropdown-menu li a:hover p {
+  color: #FFFFFF !important;
+}
+
+#calendar .fc-toolbar h2 {
+  font-size: 17px; /* Adjust the font size as needed */
+}
+
+/* More Information */
+.small-box>.small-box-footer {
+  background-color: rgb(120 180 255 / 20%);
+  color: rgba(255,255,255,.8);
+  display: block;
+  padding: 3px 0;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  z-index: 10;
+
+&:hover {
+  background-color: rgba(18, 78, 152, 0.2);
+  color: rgba(255,255,255,.8);
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #326B6A !important;
+  border-color: #326B6A !important;
+  box-shadow: none;
+}
+
+}
+
+
+
