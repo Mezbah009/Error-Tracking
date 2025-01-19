@@ -13,12 +13,12 @@
                 <!-- Add icons to the links using the .nav-icon class
                     with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="{{ route('error_trackings.index') }}" class="nav-link">
+                    <a href="{{ route('developer_error_trackings.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>Daily Error Tracking list</p>
                     </a>
                 </li>
-                 <li class="nav-item">
+                 {{-- <li class="nav-item">
                     <a href="{{ route('users.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>Developer </p>
@@ -29,7 +29,7 @@
                         <i class="nav-icon fas fa-key"></i>
                         <p>Project Name</p>
                     </a>
-                </li>
+                </li> --}}
                 {{-- <li class="nav-item">
                     <a href="{{ route('news.update_category') }}" class="nav-link">
                     <i class="nav-icon fas fa-list"></i></i>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PHQMM :: Manager Panel</title>
+    <title>Daily Error Tracking :: Developer Panel</title>
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -37,7 +37,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="{{ asset('admin-assets/img/bangladesh-police.png') }}" alt="">
+                    <img src="{{ asset('admin-assets/img/') }}" alt="">
                 </div>
             </div>
         </div>
@@ -68,14 +68,14 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link p-0 pr-3" data-toggle="dropdown" href="#">
                         <div class="d-flex align-items-center">
-                            @if (Auth::guard('member')->check() && !empty(Auth::guard('member')->user()->image) &&
-                            base64_decode(Auth::guard('member')->user()->image, true) !== false)
+                            @if (Auth::guard('developer')->check() && !empty(Auth::guard('developer')->user()->image) &&
+                            base64_decode(Auth::guard('developer')->user()->image, true) !== false)
                             <?php
-                            $imageData = Auth::guard('member')->user()->image;
+                            $imageData = Auth::guard('developer')->user()->image;
                             $imageSrc = 'data:image/jpeg;base64,' . $imageData;
                             ?>
                             <img src="{{ $imageSrc }}" class="img-circle elevation-2 mr-2"
-                                alt="{{ Auth::guard('member')->user()->name }}" width="40" height="40"
+                                alt="{{ Auth::guard('developer')->user()->name }}" width="40" height="40"
                                 style="padding: 3px" ;>
                             @else
                             <img src="{{ asset('admin-assets/img/avatar5.png') }}" class="img-circle elevation-2 mr-2"
@@ -83,16 +83,16 @@
                             @endif
 
                             <div>
-                                <p class="mb-0">Manager</p>
+                                <p class="mb-0">Developer</p>
                             </div>
                         </div>
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-3">
-                        <h4 class="h4 mb-0"><strong>{{Auth::guard('member')->user()->name}}</strong></h4>
-                        <div class="mb-3">{{Auth::guard('member')->user()->email}}</div>
+                        <h4 class="h4 mb-0"><strong>{{Auth::guard('developer')->user()->name}}</strong></h4>
+                        <div class="mb-3">{{Auth::guard('developer')->user()->email}}</div>
                         <div class="dropdown-divider"></div>
-                        <a href="{{ route('member.profile.edit') }}" class="dropdown-item">
+                        <a href="{{ route('developer.profile.edit') }}" class="dropdown-item">
                             <i class="fas fa-user-cog mr-2"></i> Profile
                         </a>
                         <div class="dropdown-divider"></div>
@@ -106,7 +106,7 @@
         <!-- /.navbar -->
         <!-- Main Sidebar Container -->
 
-        @include('member.layouts.sidebar')
+        @include('developer.layouts.sidebar')
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">

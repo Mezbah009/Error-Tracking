@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\DeveloperController;
 use App\Http\Controllers\Admin\ErrorTrackingController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Developer\DeveloperErrorTrackingController;
 use App\Http\Controllers\Developer\DeveloperHomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -79,7 +80,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/profile-edit', [LoginController::class, 'edit'])->name('admin.profile.edit');
         Route::put('/profie-update/{id}', [LoginController::class, 'update'])->name('admin.profile.update');
 
-        Route::get('/logout', [LoginController::class, 'logout'])->name('admin.logout');
+
 
 
 
@@ -96,31 +97,48 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 
-// Route::group(['prefix' => 'member'], function () {
-//     // Routes for members
-//     Route::group(['middleware' => 'member.guest'], function () {
-//         Route::get('/login', [LoginController::class, 'index'])->name('admin.login');
-//         Route::post('/member/authenticate', [LoginController::class, 'authenticate'])->name('member.authenticate');
-//     });
+Route::group(['prefix' => 'developer'], function () {
+    // Routes for developer
+    Route::group(['middleware' => 'developer.guest'], function () {
+        Route::get('/login', [LoginController::class, 'index'])->name('admin.login');
+        Route::post('/developer/authenticate', [LoginController::class, 'authenticate'])->name('developer.authenticate');
+    });
 
-//     Route::group(['middleware' => 'member.auth'], function () {
+    Route::group(['middleware' => 'developer.auth'], function () {
 
-//         Route::get('/developer/dashboard', [DeveloperHomeController::class, 'index'])->name('member.dashboard');
-//         Route::get('/manager-masterdata', [DeveloperHomeController::class, 'masterdata_index'])->name('member.masterdata');
-//         Route::get('/funding-expense', [DeveloperHomeController::class, 'fundingExpense'])->name('member.fundingExpense');
-//         Route::get('/manager-reports', [DeveloperHomeController::class, 'reports_index'])->name('member.reports');
-//         Route::get('/manager-local-purchase', [DeveloperHomeController::class, 'purchase_page'])->name('member.purchase');
-//         Route::get('/manager-calender', [DeveloperHomeController::class, 'calender'])->name('member.calender');
-//         Route::get('/manager-list-by-date', [DeveloperHomeController::class, 'listByDate'])->name('member.listByDate');
-//         Route::get('/manager-user-list-by-date', [DeveloperHomeController::class, 'userListByDate'])->name('member.userListByDate');
-//         Route::post('/manager-users/change-status', [DeveloperHomeController::class, 'changeStatus'])->name('member.users.changeStatus');
-//         Route::get('/manager-list', [DeveloperHomeController::class, 'index'])->name('member.users.list');
+        Route::get('/developer/dashboard', [DeveloperHomeController::class, 'index'])->name('developer.dashboard');
 
-//         //member
-//         Route::get('/manager-profile-edit', [LoginController::class, 'manager_edit'])->name('member.profile.edit');
-//         Route::put('/manager-profie-update/{id}', [LoginController::class, 'manager_update'])->name('member.profile.update');
 
-//         Route::get('/logout', [LoginController::class, 'logout'])->name('member.logout');
+        Route::get('/developer-masterdata', [DeveloperHomeController::class, 'masterdata_index'])->name('developer.masterdata');
+        Route::get('/funding-expense', [DeveloperHomeController::class, 'fundingExpense'])->name('developer.fundingExpense');
+        Route::get('/developer-reports', [DeveloperHomeController::class, 'reports_index'])->name('developer.reports');
+        Route::get('/developerdeveloper-local-purchase', [DeveloperHomeController::class, 'purchase_page'])->name('developer.purchase');
+        Route::get('/developer-calender', [DeveloperHomeController::class, 'calender'])->name('memdeveloperber.calender');
+        Route::get('/developer-list-by-date', [DeveloperHomeController::class, 'listByDate'])->name('developer.listByDate');
+        Route::get('/developer-user-list-by-date', [DeveloperHomeController::class, 'userListByDate'])->name('developer.userListByDate');
+        Route::post('/developer-users/change-status', [DeveloperHomeController::class, 'changeStatus'])->name('developer.users.changeStatus');
+        Route::get('/developer-list', [DeveloperHomeController::class, 'index'])->name('developer.users.list');
 
-//     });
-// });
+        //member
+        Route::get('/developer-profile-edit', [LoginController::class, 'developer_edit'])->name('developer.profile.edit');
+        Route::put('/developer-profie-update/{id}', [LoginController::class, 'developer_update'])->name('developer.profile.update');
+
+        Route::get('/logout', [LoginController::class, 'logout'])->name('admin.logout');
+
+
+
+
+        // Route::resource('error_trackings', DeveloperErrorTrackingController::class);
+
+
+        Route::get('/error_trackings', [DeveloperErrorTrackingController::class, 'index'])->name('developer_error_trackings.index');
+        Route::get('/error_trackings/create', [DeveloperErrorTrackingController::class, 'create'])->name('developer_error_trackings.create');
+        Route::post('/error_trackings', [DeveloperErrorTrackingController::class, 'store'])->name('developer_error_trackings.store');
+        Route::get('/error_trackings/{id}', [DeveloperErrorTrackingController::class, 'show'])->name('developer_error_trackings.show'); // Change method to GET
+        Route::get('/error_trackings/{id}/edit', [DeveloperErrorTrackingController::class, 'edit'])->name('developer_error_trackings.edit');
+        Route::put('/error_trackings/{id}', [DeveloperErrorTrackingController::class, 'update'])->name('developer_error_trackings.update');
+        Route::delete('/error_trackings/{id}', [DeveloperErrorTrackingController::class, 'destroy'])->name('developer_error_trackings.destroy');
+
+
+    });
+});
